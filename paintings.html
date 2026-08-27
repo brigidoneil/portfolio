@@ -6,7 +6,7 @@
     <title>Brigid O'Neil | Paintings</title>
     <link href="/style.css" rel="stylesheet" type="text/css" media="all">
     <link rel="icon" type="image/x-icon" href="/images/">
-    <script src="main.js"></script> 
+    <script src="main.js" defer></script> 
   </head>
   
   <body>
@@ -15,65 +15,76 @@
              <a href="index.html" class="nameTitle">Brigid O'Neil</a>
         </div>
       
+        <!--NAVBAR-->
         <div class="navbar">
            <a href="paintings.html">Paintings</a>
            <a href="digitals.html">Digitals</a>
            <a href="about.html">About</a>
            <a href="cv.html">CV</a>
         </div>
+
+        <!--HIDDEN LIGHTBOX-->
+        <div id="lightbox" class="lightbox">
+          <span class="close-btn">&times;</span>
+          <button class="nav-btn prev-btn">&#10094;</button>
+          <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Active View">
+          </div>
+          <button class="nav-btn next-btn">&#10095;</button>
+        </div>
         
-        <div class="imageGrid">
-            <div>
+        <!--IMAGES-->
+        <div id="scroll-container" class="imageGrid">
+            <div class="gallery-item" data-full="images/paintings_resized/Limb01_2025_1k.png">
             <img src="images/paintings_resized/Limb01_2025_1k.png" class="paintingImage "><br>
             <p><strong>Limb 01</strong> <br> 2025  oil on canvas  24x48"</p>
             </div>
            
-           <div>
+           <div class="gallery-item" data-full="images/paintings_resized/AngelPulp_2024_1k.png">
            <img src="images/paintings_resized/AngelPulp_2024_1k.png" class="paintingImage"><br>
            <p><strong>Angel Pulp</strong> <br> 2024  oil on canvas  36x48"</p>
            </div>
            
-           <div>
+           <div class="gallery-item" data-full="images/paintings_resized/Limb02_2025_1k.png">
             <img src="images/paintings_resized/Limb02_2025_1k.png" class="paintingImage"><br>
             <p><strong>Limb 02</strong> <br> 2025  oil on canvas  24x48"</p>
             </div>
            
-           <div>
+           <div class="gallery-item" data-full="images/paintings_resized/EveryThingABodyAndEveryBodyMine_2024_1k.png">
            <img src="images/paintings_resized/EveryThingABodyAndEveryBodyMine_2024_1k.png" class="paintingImage"><br>
            <p><strong>Every Thing a Body and Every Body Mine</strong> <br> 2024  oil on canvas  48x36"</p>
            </div> 
             
-            <div>
+            <div class="gallery-item" data-full="images/paintings_resized/MorninScream_2025_1k.png">
             <img src="images/paintings_resized/MorninScream_2025_1k.png" class="paintingImage"><br>
             <p><strong>Mornin Scream</strong> <br> 2025  oil on canvas  12x16"</p>
             </div>
             
-            <div>
+            <div class="gallery-item" data-full="images/paintings_resized/KeepForever_2024_1k.png">
             <img src="images/paintings_resized/KeepForever_2024_1k.png" class="paintingImage"><br>
             <p><strong>Keep Forever</strong> <br> 2024  oil on canvas  22x44"</p>
             </div>
             
-            <div>
+            <div class="gallery-item" data-full="images/paintings_resized/FlatRat_2025_1k.png">
             <img src="images/paintings_resized/FlatRat_2025_1k.png" class="paintingImage"><br>
             <p><strong>Flat Rat</strong> <br> 2025  oil on canvas  24x36"</p>
             </div>
             
-            <div>
+            <div class="gallery-item" data-full="images/paintings_resized/WinterSun_2025_1k.png">
             <img src="images/paintings_resized/WinterSun_2025_1k.png" class="paintingImage"><br>
             <p><strong>Winter Sun</strong> <br> 2025  oil on canvas  8x10"</p>
             </div>
-          
-            <div>
+        
+            <div class="gallery-item" data-full="images/paintings_resized/GetFree_2025_1k.png">
             <img src="images/paintings_resized/GetFree_2025_1k.png" class="paintingImage" style="border-radius: 0rem; box-shadow: none;"><br>
             <p><strong>Get Free</strong> <br> 2025  oil on canvas  30x30"</p>
             </div>
          
-      
         </div>
 
         <div class="footer">
         <p>Copyright Brigid O'Neil 2026</p>
         </div>
-      
+
   </body>
 </html>

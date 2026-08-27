@@ -8,7 +8,7 @@ body {
   margin: auto;
   color: #111111;
   font-family: 'AveriaSerifLibre';
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 
 
@@ -32,15 +32,17 @@ body {
   color: #2E3B47;
   font-size: 20px;
   text-align: center;
-  padding: 14px 16px;
+  padding: 18px 20px;
   text-decoration: none;
   transition: 2s, ease-in-out;
 }
 
 .navbar a:hover {
-  background-color: #7e100b;
+  background: radial-gradient(ellipse at center, #7e100b 0, #7e100b 30%, #7e110b00 60%);
   color: #f5f5f5;
   border-radius: 2rem;
+  /*border: 8px solid rgba(126, 16, 11, 0.1); */
+  transition: color 1s ease-in-out, background 1s ease-in-out;
 }
 
 .navbar a:dropdown {
@@ -130,7 +132,7 @@ img {
  margin: auto;
  grid-gap: 3rem;
  overflow-y: auto;
- overflow-x: hidden;
+ overflow-x: auto;
  text-align:center;
 }
 
@@ -149,6 +151,7 @@ img {
   font-family: 'AveriaSerifLibre';
   opacity: 1;
   transform: scale(1);
+  cursor: pointer;
 }
 
 .imageGrid::-webkit-scrollbar {
@@ -163,14 +166,6 @@ img {
   max-height: 500px;
 }
 
-.digitalsImage {
-  display: block;
-  border-radius: .3rem;
-  box-shadow: 0px 2px 5px #000;
-  max-width: 500px;
-  max-height: 500px;
-}
-
 .imageGrid > div img:hover::before {
   content: "";
   position: absolute;
@@ -179,17 +174,56 @@ img {
   background-color: rgba(0, 0, 0, .5);
   width: 100%;
   height: 100%;
-  transition: all 1s ease-in-out;
 }
 
 .imageGrid > div:hover img {
   opacity: .8;
+  transition: all .3s ease-in-out;
 }
+
 
 .container {
   display: block;
   position: relative;
 }
+
+.project-panel {
+  display: flex;
+  flex-direction: column;
+  color: #333;
+  background:linear-gradient(rgba(255, 255, 255, 0.5) 0, rgba(0, 0, 0, .9) 50%);
+  background-size: cover;
+  height: 500px;
+  width: 300px;
+  padding: 1rem;
+  border-radius: 1rem;
+  justify-content: bottom;
+  align-items: center;
+}
+
+
+
+
+/* Hidden Overlay Base Styling */
+.lightbox {
+  display: none;
+  position: fixed; z-index: 1000; top: 0; left: 0;
+  width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9);
+  justify-content: center; align-items: center;
+}
+/* Triggered Display state */
+.lightbox.active { display: flex; }
+.lightbox-content img { max-width: 90vw; max-height: 80vh; border-radius: 4px; }
+
+/* Control Buttons Styling */
+.close-btn { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; cursor: pointer; }
+.nav-btn { position: absolute; top: 50%; transform: translateY(-50%); background: none; border: none; color: white; font-size: 35px; cursor: pointer; padding: 15px; }
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }
+
+
+
+
 
 .image {
   display: block;
@@ -217,34 +251,29 @@ img {
 p:target { background: red; }
 
 
+
 /* SCREEN RESPONSIVITY */
 
-/*
-@media only screen and (min-width: 900px) {
-  .imageGrid {
-    grid-template-columns: repeat(1, 1fr);
-    flex-direction: column;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    }
-}
-*/
-
+/* Tablet + Mobile */
 @media screen and (max-width: 1024px) {
   .imageGrid {
-    grid-template-columns: repeat(1, 1fr);
     flex-direction: column;
     overflow-y: auto;
     overflow-x: hidden;
   } 
 }
 
+/* Large Monitor */
 @media screen and (min-width: 1400px) {
   .imageGrid {
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    width: 100%;
     flex-direction: row;
     overflow-y: hidden;
-    overflow-x: auto;   
+    overflow-x: auto;
+    scrollbar-width: none;
+    white-space: nowrap;
+    scroll-behavior: smooth;
   }
   
 }
